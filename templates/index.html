@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<main class="container">
+  <section class="hero">
+    <div class="brand">
+      <img src="https://www.ulima.edu.pe/themes/custom/ulima/logo.svg" alt="ULima">
+      <span>Sistemas Operativos · Proyecto Integrador</span>
+    </div>
+    <h1>{{ emoji }} {{ title }}</h1>
+    <p>{{ scenario }}</p>
+  </section>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}<p class="msg">{{ messages[0] }}</p>{% endif %}
+  {% endwith %}
+  <section class="summary-grid">
+    <article class="metric"><span>Registros</span><strong>{{ resumen.registros }}</strong></article>
+    <article class="metric"><span>{{ summary_label }}</span><strong>{{ resumen.total }}</strong></article>
+  </section>
+  <section class="grid">
+    <article class="card">
+      <h2>{{ "✏️ Actualizar registro" if edit_item else "➕ Crear registro" }}</h2>
+      <form method="post" action="{{ '/actualizar/' ~ edit_item.id if edit_item else '/crear' }}">
+        {% for name, label, typ in fields %}
+          <label>{{ label }}
+            <input name="{{ name }}" type="{{ 'number' if typ == 'number' else 'text' }}" step="0.01" value="{{ edit_item[name] if edit_item else '' }}" required>
+          </label>
+        {% endfor %}
+        <div class="actions">
+          <button class="primary" type="submit">{{ "Actualizar" if edit_item else "Guardar" }}</button>
+          {% if edit_item %}<a class="btn light" href="/">Cancelar</a>{% endif %}
+        </div>
+      </form>
+    </article>
+  </section>
+  <section class="card">
+    <h2>📋 Vista de resultados</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>ID</th>{% for name, label, typ in fields %}<th>{{ label }}</th>{% endfor %}<th>Acciones</th></tr></thead>
+        <tbody>
+          {% for item in items %}
+          <tr>
+            <td>{{ item.id }}</td>
+            {% for name, label, typ in fields %}<td>{{ item[name] }}</td>{% endfor %}
+            <td>
+              <div class="actions">
+                <a class="btn dark" href="/editar/{{ item.id }}">Editar</a>
+                <form method="post" action="/eliminar/{{ item.id }}" onsubmit="return confirm('¿Eliminar registro?')">
+                  <button class="danger" type="submit">Eliminar</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+</body>
+</html>
