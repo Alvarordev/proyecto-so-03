@@ -7,3 +7,4 @@ FIELDS=[('curso', 'Curso', 'text'), ('responsable', 'Responsable', 'text'), ('ho
 SEED=[('Sistemas Operativos', 'Docente A', 4), ('Redes', 'Docente B', 3), ('DevOps', 'Docente C', 5)]
 SUMMARY_COL='horas'
 SUMMARY_LABEL='Horas reservadas'
+
