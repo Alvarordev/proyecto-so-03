@@ -194,9 +194,9 @@ Este proyecto está orientado al **aprendizaje y la demostración académica**. 
 ## 👨‍💻 Autor
 
 Desarrollado por:
-Alvaro Rodriguez (https://github.com/Alvarordev)
-Geraldine Acosta
-Gabriel Meza (https://github.com/gabrielmezi)
-Nicole Curi
+- Alvaro Rodriguez (https://github.com/Alvarordev)
+- Geraldine Acosta
+- Gabriel Meza (https://github.com/gabrielmezi)
+- Nicole Curi
 
 Repositorio: [github.com/Alvarordev/proyecto-so-03](https://github.com/Alvarordev/proyecto-so-03)
