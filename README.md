@@ -186,13 +186,17 @@ Los parámetros principales se encuentran en `config.py`:
 - **Datos de ejemplo:** reservas iniciales de Sistemas Operativos, Redes y DevOps.
 
 También es posible cambiar la ruta de la base de datos mediante la variable de entorno `DB_PATH`.
-
+ald
 ## ⚠️ Consideraciones
 
 Este proyecto está orientado al **aprendizaje y la demostración académica**. Antes de utilizarlo en producción, sería recomendable incorporar autenticación, validaciones adicionales, gestión segura de claves, copias de seguridad y un servidor WSGI adecuado.
 
 ## 👨‍💻 Autor
 
-Desarrollado por [Alvarordev](https://github.com/Alvarordev).
+Desarrollado por:
+Alvaro Rodriguez (https://github.com/Alvarordev)
+Geraldine Acosta
+Gabriel Meza (https://github.com/gabrielmezi)
+Nicole Curi
 
 Repositorio: [github.com/Alvarordev/proyecto-so-03](https://github.com/Alvarordev/proyecto-so-03)
